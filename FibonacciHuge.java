@@ -7,20 +7,17 @@ public class FibonacciHuge {
 
         long period = calculatePeriod(m);
 
-//        System.out.println("Period => " + period);
-//        System.out.println("Max = " + ((n % period) - 1));
-
         long newNValue = (n % period);
-//        System.out.println("new value = " + newNValue);
 
         if (newNValue <= 1) {
             return newNValue;
         }
 
-        for (long i = 0; i < (n % period) - 1; ++i) {
-            long tmp_previous = previous;
+        // Calculate from index 2 because 0 and 1 are assigned.
+        for (long i = 2; i <= (n % period); ++i) {
+            long tempPrevious = previous;
             previous = current;
-            current = (tmp_previous + current) % m;
+            current = (tempPrevious + current) % m;
         }
 
         return current % m;
