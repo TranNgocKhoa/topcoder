@@ -57,5 +57,8 @@ public class JosephusProblem {
 
         System.out.println(josephusNaive(9, 5));
         System.out.println(josephus(9, 5));
+
+        System.out.println(josephusNaive(41, 3));
+        System.out.println(josephus(41, 3));
     }
 }
