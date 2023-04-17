@@ -44,12 +44,7 @@ public class Closest {
 
             return min;
         } else {
-            Collections.sort(points , new Comparator<Point>() {
-                @Override
-                public int compare(Point o1, Point o2) {
-                    return (int) (o1.x - o2.x);
-                }
-            });
+            Collections.sort(points , (o1, o2) -> (int) (o1.x - o2.x));
             int midIndex = points.size() / 2;
             long midX = points.get(midIndex).x;
 
@@ -65,12 +60,7 @@ public class Closest {
                     stripPoints.add(point);
                 }
             }
-            Collections.sort(stripPoints, new Comparator<Point>() {
-                @Override
-                public int compare(Point o1, Point o2) {
-                    return (int) (o1.y - o2.y);
-                }
-            });
+            Collections.sort(stripPoints, (o1, o2) -> (int) (o1.y - o2.y));
 
             for (int i = 0; i < stripPoints.size(); i++) {
                 for (int j = 1; j < Math.min(i + 8, stripPoints.size()); j++) {
