@@ -16,7 +16,7 @@ public class JobScheduling {
     static void printJobScheduling(ArrayList<Job> arr) {
         // Length of array
         int n = arr.size();
-        arr.sort((a, b) -> b.profit - a.profit);
+
         char[] jobs = new char[arr.size()];
         for (int i = 0; i < jobs.length; i++) {
             jobs[i] = arr.get(i).id;
